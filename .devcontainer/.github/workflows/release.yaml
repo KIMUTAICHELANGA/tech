@@ -1,0 +1,23 @@
+name: Update Readme
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  updateReadme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update Readme
+        run: |
+          # Add your code here to update the readme file
+
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: readme
+          path: README.md
